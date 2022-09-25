@@ -9,11 +9,18 @@
   &lt;/And&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c9ecd38d_002Dd313_002D4b8c_002Daa0a_002Db9af61e21bae/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Session #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;And&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;And&gt;&#xD;
+      &lt;TestAncestor&gt;&#xD;
+        &lt;TestId&gt;xUnit::35B1A222-6F4B-4ED2-B2D7-D39145E1B751::net6.0::RestSharpTestVS.Authentication.GetWithQueryParameterTest&lt;/TestId&gt;&#xD;
+      &lt;/TestAncestor&gt;&#xD;
+      &lt;Project Location="F:\OneDrive\OneDrive - Morgan\OneDrive\Morgan\Study\Video\C#\Api Testing\AppWithoutAuth\RestSharpTestVS\RestSharpTestVS" Presentation="&amp;lt;RestSharpTestVS&amp;gt;" /&gt;&#xD;
+      &lt;Namespace&gt;RestSharpTestVS&lt;/Namespace&gt;&#xD;
+    &lt;/And&gt;&#xD;
     &lt;TestAncestor&gt;&#xD;
-      &lt;TestId&gt;xUnit::35B1A222-6F4B-4ED2-B2D7-D39145E1B751::net6.0::RestSharpTestVS.UnitTest1.FileUpLoadTest&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::35B1A222-6F4B-4ED2-B2D7-D39145E1B751::net6.0::RestSharpTestVS.BasicTests.FileUpLoadTest&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::35B1A222-6F4B-4ED2-B2D7-D39145E1B751::net6.0::RestSharpTestVS.BasicTests.PostProductTest&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::35B1A222-6F4B-4ED2-B2D7-D39145E1B751::net6.0::RestSharpTestVS.BasicTests&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
-    &lt;Project Location="F:\OneDrive\OneDrive - Morgan\OneDrive\Morgan\Study\Video\C#\Api Testing\AppWithoutAuth\RestSharpTestVS\RestSharpTestVS" Presentation="&amp;lt;RestSharpTestVS&amp;gt;" /&gt;&#xD;
-    &lt;Namespace&gt;RestSharpTestVS&lt;/Namespace&gt;&#xD;
-  &lt;/And&gt;&#xD;
+  &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
