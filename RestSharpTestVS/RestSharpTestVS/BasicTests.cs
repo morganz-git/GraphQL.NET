@@ -6,6 +6,7 @@ using Newtonsoft.Json.Linq;
 using RestSharp;
 using RestSharpTestVS.Base;
 using Xunit;
+
 namespace RestSharpTestVS;
 
 // IClassFixture -> Xunit 是一个泛型接口，用于在测试类中注入一个实例，这个实例在整个测试类中都可以使用
@@ -15,14 +16,21 @@ public class BasicTests
 {
     //私有变量, 这里的RestClient 
     private readonly RestClient _client;
+    private readonly IRestBuilder _restBuilder;
 
     // var restLibrary = new RestLibrary();  这里的 IRestLibrary 是自己写的一个类，用于初始化RestClient
-    public BasicTests(IRestLibrary restLibrary) => _client = restLibrary.RestClient;
+    public BasicTests(IRestLibrary restLibrary, IRestBuilder restBuilder)
+    {
+        _restBuilder = restBuilder;
+        _client = restLibrary.RestClient;
+        // _restBuilder = restBuilder;
+    }
 
     [Fact]
     // Task : Represents an asynchronous operation.
     public async Task Test1()
     {
+        // _restBuilder.WithRequest("heheh").Withheader().WithRequest().Withheader();
         //Rest Request initialization
         var request = new RestRequest("Product/GetProductById/1");
         request.AddHeader("authorization", $"Bearer {GetToken()}");
