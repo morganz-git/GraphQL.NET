@@ -3,16 +3,31 @@
 namespace RestSharpTestVS.Base;
 
 // 使用 builder patten, 需要有builder class
-public interface IRestBuilder
+
+/*public interface IRestBuilder
 {
     RestRequest RestRequest { get; set; }
 
     // 需要声明, 以便于BasicTest 中的测试用例进行调佣
     public IRestBuilder WithRequest(string request);
-    public IRestBuilder Withheader(string name, string value);
-    public IRestBuilder WithQueryParameter(string name, string value);
-    public IRestBuilder WithUrlSegment(string name, string value);
-    public IRestBuilder WithBody(object body);
+     public IRestBuilder Withheader(string name, string value);
+     public IRestBuilder WithQueryParameter(string name, string value);
+     public IRestBuilder WithUrlSegment(string name, string value);
+     public IRestBuilder WithBody(object body);
+ }*/
+
+public interface IRestBuilder
+{
+    RestRequest RestRequest { get; set; }
+    IRestBuilder WithRequest(string request);
+    IRestBuilder Withheader(string name, string value);
+    IRestBuilder WithQueryParameter(string name, string value);
+    IRestBuilder WithUrlSegment(string name, string value);
+    IRestBuilder WithBody(object body);
+    Task<T?> WithGet<T>() where T : new();
+    Task<T?> WithPost<T>() where T : new(); 
+    Task<T?> WithPut<T>() where T : new();
+    Task<T?> WithDelete<T>() where T : new();
 }
 
 public class RestBuilder : IRestBuilder
@@ -72,5 +87,34 @@ return this;//表示返回窗体对象
     {
         RestRequest.AddBody(body);
         return this;
+    }
+    // Get Put...等方法, 返回的是一个泛型的类型 -- _client.GetAsync<Product>(request);
+    // 至于await async 相关的东西 Test方法由于被async修饰，表明这个可以是异步方法，方法内部await修饰的Task，执行到这一行代码时，会等待Task执行完成后，才会执行Test方法里下一行的代码。
+    //--https://blog.csdn.net/weixin_49431316/article/details/111901457
+
+    /* ? 表示返回不能为空   async 的三大返回类型
+     返回类型  - Task<TResult> 
+    返回类型 - Task
+        返回类型 - void
+        https://www.cnblogs.com/liqingwen/p/6218994.html
+        */
+    public async Task<T?> WithGet<T>() where T : new()
+    {
+        return await _restLibrary.RestClient.GetAsync<T>(RestRequest);
+    }
+
+    public async Task<T?> WithPost<T>() where T : new()
+    {
+        return await _restLibrary.RestClient.PostAsync<T>(RestRequest);
+    }
+
+    public async Task<T?> WithPut<T>() where T : new()
+    {
+        return await _restLibrary.RestClient.PutAsync<T>(RestRequest);
+    }
+
+    public async Task<T?> WithDelete<T>() where T : new()
+    {
+        return await _restLibrary.RestClient.DeleteAsync<T>(RestRequest);
     }
 };
