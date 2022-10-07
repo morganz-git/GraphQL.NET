@@ -9,6 +9,12 @@ public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddSingleton<IRestLibrary, RestLibrary>();
+        /*services.AddSingleton<IRestLibrary, RestLibrary>();
+        services.AddScoped<IRestBuilder, RestBuilder>();
+        services.AddScoped<IRestFactory, IRestFactory>();*/
+        services
+            .AddSingleton<IRestLibrary, RestLibrary>()
+            .AddScoped<IRestBuilder, RestBuilder>()
+            .AddScoped<IRestFactory, RestFactory>();
     }
-} 
+}

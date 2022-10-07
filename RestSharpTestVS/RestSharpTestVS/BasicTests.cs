@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Net;
 using FluentAssertions;
 using GraphQLProductApp.Controllers;
@@ -16,31 +17,40 @@ public class BasicTests
 {
     //私有变量, 这里的RestClient 
     private readonly RestClient _client;
-    private readonly IRestBuilder _restBuilder;
+
+    // private readonly IRestBuilder _restBuilder;
+    private readonly IRestFactory _restFactory;
 
     // var restLibrary = new RestLibrary();  这里的 IRestLibrary 是自己写的一个类，用于初始化RestClient
-    public BasicTests(IRestLibrary restLibrary, IRestBuilder restBuilder)
+    public BasicTests(IRestFactory restFactory)
     {
-        _restBuilder = restBuilder;
-        _client = restLibrary.RestClient;
+        _restFactory = restFactory;
+        // _client = restLibrary.RestClient;
         // _restBuilder = restBuilder;
     }
 
     [Fact]
     // Task : Represents an asynchronous operation.
-    public async Task Test1()
+    public async Task GetOperationTest()
     {
+        var token = GetToken();
+        var response = await _restFactory.Create()
+            .WithRequest("Product/GetProductById/1")
+            /*.Withheader("autherication", $"Bearer {GetToken()}") 这里会有错误出现,因为这里本来在一个refactory中,
+             但是接下来的GetToken 又是一个refactory, 所以需要把GetToken提出来, 弄成一个变量*/
+            .Withheader("Authorization", $"Bearer {token}")
+            .WithGet<Product>();
         // _restBuilder.WithRequest("heheh").Withheader().WithRequest().Withheader();
         //Rest Request initialization
-        var request = new RestRequest("Product/GetProductById/1");
+        /*var request = new RestRequest("Product/GetProductById/1");
         request.AddHeader("authorization", $"Bearer {GetToken()}");
         //perform GET operation
         // 因为是async 所以需要 await在这里, 然后 这个方法需要用async修饰
-        /*加入的泛型, 说明get返回的是一个product 类型*/
+        /*加入的泛型, 说明get返回的是一个product 类型#1#
         Product? response = await _client.GetAsync<Product>(request);
         //Assert
         // 安准fluent assertion 来进行assert的操作
-        // 由于product 是一个类, 所以可以列出其各种变量
+        // 由于product 是一个类, 所以可以列出其各种变量*/
         response?.Name.Should().Be("Keyboard");
     }
 
@@ -133,18 +143,30 @@ public class BasicTests
     // ? 表示这种返回值可以是null
     private JToken? GetToken()
     {
+        var authRequest = _restFactory
+            .Create()
+            .WithRequest("api/Authenticate/Login")
+            .WithBody(new LoginModel
+            {
+                UserName = "admin",
+                Password = "123456"
+            })
+            // .WithPost<>()// 由于PoseAsync不是一个type, 所以需要进行一下修改
+            .WithPost()
+            .Result
+            .Content;
+        Debug.Assert(authRequest != null, nameof(authRequest) + " != null");
+        return JObject.Parse(authRequest)["token"];
+        /*
         var authRequest = new RestRequest("api/Authenticate/Login", Method.Post);
-
         authRequest.AddJsonBody(new LoginModel
         {
             UserName = "admin",
             Password = "123456"
         });
+        //这里authRequest 不是一个type, 所以上面的额WithPost<> 需要进行修改
         var response = _client.PostAsync(authRequest).Result.Content;
-
         return JObject.Parse(response)["token"];
-
-        // var authResponse = _client.PostAsync(authRequest).Result.Content;
-     
+        // var authResponse = _client.PostAsync(authRequest).Result.Content;*/
     }
 }
