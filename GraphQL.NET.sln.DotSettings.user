@@ -1,9 +1,20 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=93841da8_002Dba3d_002D4780_002Db60b_002D656ba4e0928e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9329ab40_002D78dd_002D4652_002D804f_002D2fdb21db3dd7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FileUpLoadTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::35B1A222-6F4B-4ED2-B2D7-D39145E1B751::net6.0::RestSharpTestVS.BasicTests.Test1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::35B1A222-6F4B-4ED2-B2D7-D39145E1B751::net6.0::RestSharpTestVS.BasicTests.FileUpLoadTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a4ee4aff_002Dffc6_002D4e70_002D8748_002Da0783655051e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FileUpLoadTest #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::35B1A222-6F4B-4ED2-B2D7-D39145E1B751::net6.0::RestSharpTestVS.BasicTests.FileUpLoadTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b9b8f2a3_002D8543_002D49dc_002Dbecb_002D32b662c6e078/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FileUpLoadTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::35B1A222-6F4B-4ED2-B2D7-D39145E1B751::net6.0::RestSharpTestVS.BasicTests.FileUpLoadTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c9ecd38d_002Dd313_002D4b8c_002Daa0a_002Db9af61e21bae/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Session #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Or&gt;&#xD;
     &lt;And&gt;&#xD;

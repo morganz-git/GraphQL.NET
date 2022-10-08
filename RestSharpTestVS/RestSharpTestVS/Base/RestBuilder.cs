@@ -19,7 +19,7 @@ public interface IRestBuilder
 {
     RestRequest RestRequest { get; set; }
     IRestBuilder WithRequest(string request);
-    IRestBuilder Withheader(string name, string value);
+    IRestBuilder WithHeader(string name, string value);
     IRestBuilder WithQueryParameter(string name, string value);
     IRestBuilder WithUrlSegment(string name, string value);
     IRestBuilder WithBody(object body);
@@ -28,6 +28,8 @@ public interface IRestBuilder
     Task<RestResponse> WithPost();
     Task<T?> WithPut<T>() where T : new();
     Task<T?> WithDelete<T>() where T : new();
+    IRestBuilder WithFile(string file, string path, string contentType);
+     Task<RestResponse> WithExecuteAsync();
 }
 
 public class RestBuilder : IRestBuilder
@@ -65,7 +67,7 @@ return this;//表示返回窗体对象
 
     // Add header 是在request下面 
     /*        request.AddHeader("authorization", $"Bearer {GetToken()}");*/
-    public IRestBuilder Withheader(string name, string value)
+    public IRestBuilder WithHeader(string name, string value)
     {
         RestRequest.AddHeader(name, value);
         return this;
@@ -86,6 +88,14 @@ return this;//表示返回窗体对象
     public IRestBuilder WithBody(object body)
     {
         RestRequest.AddBody(body);
+        return this;
+    }
+
+    //    void WithFile(string file, string path);
+
+    public IRestBuilder WithFile(string file, string path, string contentType)
+    {
+        RestRequest.AddFile(file, path, contentType);
         return this;
     }
 
@@ -111,6 +121,11 @@ return this;//表示返回窗体对象
     public async Task<RestResponse> WithPost()
     {
         return await _restLibrary.RestClient.PostAsync(RestRequest);
+    }
+
+    public async Task<RestResponse> WithExecuteAsync()
+    {
+        return await _restLibrary.RestClient.ExecuteAsync(RestRequest);
     }
 
     public async Task<T?> WithPut<T>() where T : new()

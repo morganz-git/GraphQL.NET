@@ -16,15 +16,19 @@ namespace RestSharpTestVS;
 public class BasicTests
 {
     //私有变量, 这里的RestClient 
-    private readonly RestClient _client;
+    // private readonly RestClient _client;
 
     // private readonly IRestBuilder _restBuilder;
     private readonly IRestFactory _restFactory;
+
+    //token
+    private readonly string _token;
 
     // var restLibrary = new RestLibrary();  这里的 IRestLibrary 是自己写的一个类，用于初始化RestClient
     public BasicTests(IRestFactory restFactory)
     {
         _restFactory = restFactory;
+        _token = GetToken();
         // _client = restLibrary.RestClient;
         // _restBuilder = restBuilder;
     }
@@ -33,12 +37,11 @@ public class BasicTests
     // Task : Represents an asynchronous operation.
     public async Task GetOperationTest()
     {
-        var token = GetToken();
         var response = await _restFactory.Create()
             .WithRequest("Product/GetProductById/1")
             /*.Withheader("autherication", $"Bearer {GetToken()}") 这里会有错误出现,因为这里本来在一个refactory中,
              但是接下来的GetToken 又是一个refactory, 所以需要把GetToken提出来, 弄成一个变量*/
-            .Withheader("Authorization", $"Bearer {token}")
+            .WithHeader("Authorization", $"Bearer {_token}")
             .WithGet<Product>();
         // _restBuilder.WithRequest("heheh").Withheader().WithRequest().Withheader();
         //Rest Request initialization
@@ -58,18 +61,25 @@ public class BasicTests
     // Task : Represents an asynchronous operation.
     public async Task GetWithQuerySegmentTest()
     {
-        //Rest Request initialization
+        var response = await _restFactory
+            .Create()
+            .WithRequest("Product/GetProductById/{id}")
+            .WithUrlSegment("id", "2")
+            .WithHeader("Authorization", $"Bearer {_token}")
+            .WithGet<Product>();
+
+        /*//Rest Request initialization
         var request = new RestRequest("Product/GetProductById/{id}");
         request.AddHeader("authorization", $"Bearer {GetToken()}");
         // 这里是用segment 来传递参数的
         request.AddUrlSegment("id", 2);
         //perform GET operation
         // 因为是async 所以需要 await在这里, 然后 这个方法需要用async修饰
-        /*加入的泛型, 说明get返回的是一个product 类型*/
+        /*加入的泛型, 说明get返回的是一个product 类型#1#
         Product? response = await _client.GetAsync<Product>(request);
         //Assert
         // 安准fluent assertion 来进行assert的操作
-        // 由于product 是一个类, 所以可以列出其各种变量
+        // 由于product 是一个类, 所以可以列出其各种变量*/
         response?.Price.Should().Be(400);
     }
 
@@ -77,14 +87,24 @@ public class BasicTests
     // Task : Represents an asynchronous operation.
     public async Task GetWithQueryParameterTest()
     {
-        //Rest Request initialization   GetProductByIdAndName?Id=1&Name=1
+        var response = await _restFactory
+            .Create()
+            .WithRequest("Product/GetProductByIdAndName")
+            .WithHeader("Authorization", $"Bearer {_token}")
+            .WithQueryParameter("id", "2")
+            .WithQueryParameter("name", "Monitor")
+            .WithGet<Product>();
+        response?.ProductType.Should().Be(ProductType.MONITOR);
+
+
+        /*//Rest Request initialization   GetProductByIdAndName?Id=1&Name=1
         var request = new RestRequest("Product/GetProductByIdAndName");
         request.AddHeader("authorization", $"Bearer {GetToken()}");
         request?.AddQueryParameter("id", "2");
         request?.AddQueryParameter("name", "Monitor");
         //perform GET operation
         // 因为是async 所以需要 await在这里, 然后 这个方法需要用async修饰
-        /*加入的泛型, 说明get返回的是一个product 类型*/
+        /*加入的泛型, 说明get返回的是一个product 类型#1#
         if (request != null)
         {
             Product? response = await _client.GetAsync<Product>(request);
@@ -93,13 +113,29 @@ public class BasicTests
             // 由于product 是一个类, 所以可以列出其各种变量
             // response?.ProductType.Should().Be(1);
             response?.ProductType.Should().Be(ProductType.MONITOR);
-        }
+        }*/
     }
 
     [Fact]
     // Task : Represents an asynchronous operation.
     public async Task PostProductTest()
     {
+        var response = await _restFactory
+            .Create()
+            .WithHeader("Authorization", $"Bearer {_token}")
+            .WithRequest("Product/Create")
+            .WithBody(new Product
+            {
+                Name = "Cabinet",
+                Description = "Gaming Cabinet",
+                Price = 300,
+                ProductType = ProductType.PERIPHARALS
+            })
+            .WithPost<Product>();
+        response?.Price.Should().Be(300);
+
+
+        /*
         //Rest Request initialization   GetProductByIdAndName?Id=1&Name=1
         var request = new RestRequest("Product/Create");
         request.AddHeader("authorization", $"Bearer {GetToken()}");
@@ -114,20 +150,29 @@ public class BasicTests
         // request?.AddQueryParameter("name", "Monitor");
         //perform GET operation
         // 因为是async 所以需要 await在这里, 然后 这个方法需要用async修饰
-        /*加入的泛型, 说明get返回的是一个product 类型*/
+        /*加入的泛型, 说明get返回的是一个product 类型#1#
         var response = await _client.PostAsync<Product>(request);
         //Assert
         // 安准fluent assertion 来进行assert的操作
         // 由于product 是一个类, 所以可以列出其各种变量
         // response?.ProductType.Should().Be(1);
-        response?.Price.Should().Be(300);
+        response?.Price.Should().Be(300);*/
     }
 
     [Fact]
     // Task : Represents an asynchronous operation.
     public async Task FileUpLoadTest()
     {
-        //Rest Request initialization   GetProductByIdAndName?Id=1&Name=1
+        var response = await _restFactory
+            .Create()
+            .WithHeader("Authorization", $"Bearer {_token}")
+            .WithRequest("Product")
+            .WithFile("myFile", @"D:\OneDrive\Morgan\Study\Video\C#\Api Testing\AppWithoutAuth\Pictures\test.txt",
+                "multipart/form-data")
+            .WithExecuteAsync();
+        response.StatusCode.Should().Be(HttpStatusCode.Created);
+
+        /*//Rest Request initialization   GetProductByIdAndName?Id=1&Name=1
         // 在这里就直接说明了POST方法
         var request = new RestRequest("Product", Method.Post);
         request.AddHeader("authorization", $"Bearer {GetToken()}");
@@ -137,11 +182,11 @@ public class BasicTests
             "multipart/form-data");
         var response = await _client.ExecuteAsync(request);
         //Assert
-        response.StatusCode.Should().Be(HttpStatusCode.Created);
+        response.StatusCode.Should().Be(HttpStatusCode.Created);*/
     }
 
     // ? 表示这种返回值可以是null
-    private JToken? GetToken()
+    private string GetToken()
     {
         var authRequest = _restFactory
             .Create()
@@ -156,7 +201,7 @@ public class BasicTests
             .Result
             .Content;
         Debug.Assert(authRequest != null, nameof(authRequest) + " != null");
-        return JObject.Parse(authRequest)["token"];
+        return (string) JObject.Parse(authRequest)["token"];
         /*
         var authRequest = new RestRequest("api/Authenticate/Login", Method.Post);
         authRequest.AddJsonBody(new LoginModel
