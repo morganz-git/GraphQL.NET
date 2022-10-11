@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQLProductApp", "GraphQ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestSharpTestVS", "RestSharpTestVS\RestSharpTestVS\RestSharpTestVS.csproj", "{35B1A222-6F4B-4ED2-B2D7-D39145E1B751}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestSharpSpecflow", "RestSharpSpecflow\RestSharpSpecflow.csproj", "{74518BA5-0D80-4130-8807-E7CCBD1902B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{35B1A222-6F4B-4ED2-B2D7-D39145E1B751}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35B1A222-6F4B-4ED2-B2D7-D39145E1B751}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35B1A222-6F4B-4ED2-B2D7-D39145E1B751}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74518BA5-0D80-4130-8807-E7CCBD1902B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74518BA5-0D80-4130-8807-E7CCBD1902B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74518BA5-0D80-4130-8807-E7CCBD1902B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74518BA5-0D80-4130-8807-E7CCBD1902B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
