@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.DependencyInjection;
 using RestSharpTestVS.Base;
 
 namespace RestSharpTestVS;
@@ -13,7 +14,8 @@ public class Startup
         services.AddScoped<IRestBuilder, RestBuilder>();
         services.AddScoped<IRestFactory, IRestFactory>();*/
         services
-            .AddSingleton<IRestLibrary, RestLibrary>()
+            // .AddSingleton<IRestLibrary, RestLibrary>()  // 因为在restlibrary 中的构造函数已经发生了修改,所以这里也要进行修改
+            .AddSingleton<IRestLibrary>(new RestLibrary(new WebApplicationFactory<GraphQLProductApp.Startup>())) 
             .AddScoped<IRestBuilder, RestBuilder>()
             .AddScoped<IRestFactory, RestFactory>();
     }
