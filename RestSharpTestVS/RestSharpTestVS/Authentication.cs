@@ -47,7 +47,7 @@ public class Authentication
         // return a json body, and get the content from response 
         var authResponse = client.PostAsync(authRequest).Result.Content;
         //get the token from response
-        var token = JObject.Parse(authResponse)["token"];
+        var token = JObject.Parse(authResponse ?? throw new InvalidOperationException())["token"];
         //Rest Request initialization
         var productGetResponse = new RestRequest("Product/GetProductById/1");
         productGetResponse.AddHeader("Authorization", $"Bearer {token}");
