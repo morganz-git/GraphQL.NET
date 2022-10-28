@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "F:\\OneDrive\\OneDrive - Morgan\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\RestSharpSpecflow\\RestSharpSpecflow.csproj": {}
+    "D:\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\RestSharpSpecflow\\RestSharpSpecflow.csproj": {}
   },
   "projects": {
-    "F:\\OneDrive\\OneDrive - Morgan\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\GraphQL.NET\\GraphQLProductApp.csproj": {
+    "D:\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\GraphQL.NET\\GraphQLProductApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\OneDrive\\OneDrive - Morgan\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\GraphQL.NET\\GraphQLProductApp.csproj",
+        "projectUniqueName": "D:\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\GraphQL.NET\\GraphQLProductApp.csproj",
         "projectName": "GraphQLProductApp",
-        "projectPath": "F:\\OneDrive\\OneDrive - Morgan\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\GraphQL.NET\\GraphQLProductApp.csproj",
+        "projectPath": "D:\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\GraphQL.NET\\GraphQLProductApp.csproj",
         "packagesPath": "C:\\Users\\MorganZ\\.nuget\\packages\\",
-        "outputPath": "F:\\OneDrive\\OneDrive - Morgan\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\GraphQL.NET\\obj\\",
+        "outputPath": "D:\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\GraphQL.NET\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\MorganZ\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -102,22 +99,19 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\OneDrive\\OneDrive - Morgan\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\RestSharpSpecflow\\RestSharpSpecflow.csproj": {
+    "D:\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\RestSharpSpecflow\\RestSharpSpecflow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\OneDrive\\OneDrive - Morgan\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\RestSharpSpecflow\\RestSharpSpecflow.csproj",
+        "projectUniqueName": "D:\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\RestSharpSpecflow\\RestSharpSpecflow.csproj",
         "projectName": "RestSharpSpecflow",
-        "projectPath": "F:\\OneDrive\\OneDrive - Morgan\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\RestSharpSpecflow\\RestSharpSpecflow.csproj",
+        "projectPath": "D:\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\RestSharpSpecflow\\RestSharpSpecflow.csproj",
         "packagesPath": "C:\\Users\\MorganZ\\.nuget\\packages\\",
-        "outputPath": "F:\\OneDrive\\OneDrive - Morgan\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\RestSharpSpecflow\\obj\\",
+        "outputPath": "D:\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\RestSharpSpecflow\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\MorganZ\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -133,8 +127,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\OneDrive\\OneDrive - Morgan\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\GraphQL.NET\\GraphQLProductApp.csproj": {
-                "projectPath": "F:\\OneDrive\\OneDrive - Morgan\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\GraphQL.NET\\GraphQLProductApp.csproj"
+              "D:\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\GraphQL.NET\\GraphQLProductApp.csproj": {
+                "projectPath": "D:\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\GraphQL.NET\\GraphQLProductApp.csproj"
               }
             }
           }
@@ -193,7 +187,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
