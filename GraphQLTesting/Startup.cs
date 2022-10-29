@@ -16,3 +16,5 @@ public class Startup
         );
     }
 }
+
+//泛型的相关讲解 https://zhuanlan.zhihu.com/p/135814494 入门的
