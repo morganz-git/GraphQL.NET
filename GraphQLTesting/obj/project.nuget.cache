@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bbz3jKZnOs2Y9Y0zNb7Xlgn55WY60NZPTtyrkiIpacvZhx90ChU75JXUL5+qwyGRtqGrwUthiTERnTX42+3xUQ==",
+  "dgSpecHash": "AmRO4+sgwS0Q9m7eq6T3ZYZhBcn/1Qb2STmoqjf0S9GE5N4CiV060kx6RhKz3gthbMHmRdgM4i5U2QGPGc4Qzg==",
   "success": true,
   "projectFilePath": "D:\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\GraphQLTesting\\GraphQLTesting.csproj",
   "expectedPackageFiles": [
@@ -169,9 +169,30 @@
     "C:\\Users\\MorganZ\\.nuget\\packages\\xunit.analyzers\\0.10.0\\xunit.analyzers.0.10.0.nupkg.sha512",
     "C:\\Users\\MorganZ\\.nuget\\packages\\xunit.assert\\2.4.1\\xunit.assert.2.4.1.nupkg.sha512",
     "C:\\Users\\MorganZ\\.nuget\\packages\\xunit.core\\2.4.1\\xunit.core.2.4.1.nupkg.sha512",
-    "C:\\Users\\MorganZ\\.nuget\\packages\\xunit.extensibility.core\\2.4.1\\xunit.extensibility.core.2.4.1.nupkg.sha512",
+    "C:\\Users\\MorganZ\\.nuget\\packages\\xunit.extensibility.core\\2.4.2\\xunit.extensibility.core.2.4.2.nupkg.sha512",
     "C:\\Users\\MorganZ\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512",
     "C:\\Users\\MorganZ\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.3\\xunit.runner.visualstudio.2.4.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: xunit.core 2.4.1 requires xunit.extensibility.core (= 2.4.1) but version xunit.extensibility.core 2.4.2 was resolved.",
+      "libraryId": "xunit.extensibility.core",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: xunit.extensibility.execution 2.4.1 requires xunit.extensibility.core (= 2.4.1) but version xunit.extensibility.core 2.4.2 was resolved.",
+      "libraryId": "xunit.extensibility.core",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

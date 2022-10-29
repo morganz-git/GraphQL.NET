@@ -3021,7 +3021,7 @@
           "buildMultiTargeting/xunit.core.targets": {}
         }
       },
-      "xunit.extensibility.core/2.4.1": {
+      "xunit.extensibility.core/2.4.2": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1",
@@ -9065,13 +9065,14 @@
         "xunit.core.nuspec"
       ]
     },
-    "xunit.extensibility.core/2.4.1": {
-      "sha512": "yKZKm/8QNZnBnGZFD9SewkllHBiK0DThybQD/G4PiAmQjKtEZyHi6ET70QPU9KtSMJGRYS6Syk7EyR2EVDU4Kg==",
+    "xunit.extensibility.core/2.4.2": {
+      "sha512": "W1BoXTIN1C6kpVSMw25huSet25ky6IAQUNovu3zGOGN/jWnbgSoTyCrlIhmXSg0tH5nEf8q7h3OjNHOjyu5PfA==",
       "type": "package",
-      "path": "xunit.extensibility.core/2.4.1",
+      "path": "xunit.extensibility.core/2.4.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "_content/logo-128-transparent.png",
         "lib/net452/xunit.core.dll",
         "lib/net452/xunit.core.dll.tdnet",
         "lib/net452/xunit.core.xml",
@@ -9079,7 +9080,7 @@
         "lib/net452/xunit.runner.utility.net452.dll",
         "lib/netstandard1.1/xunit.core.dll",
         "lib/netstandard1.1/xunit.core.xml",
-        "xunit.extensibility.core.2.4.1.nupkg.sha512",
+        "xunit.extensibility.core.2.4.2.nupkg.sha512",
         "xunit.extensibility.core.nuspec"
       ]
     },
@@ -9144,6 +9145,7 @@
       "Microsoft.NET.Test.Sdk >= 17.1.0",
       "coverlet.collector >= 3.1.2",
       "xunit >= 2.4.1",
+      "xunit.extensibility.core >= 2.4.2",
       "xunit.runner.visualstudio >= 2.4.3"
     ]
   },
@@ -9216,6 +9218,10 @@
             "target": "Package",
             "version": "[2.4.1, )"
           },
+          "xunit.extensibility.core": {
+            "target": "Package",
+            "version": "[2.4.2, )"
+          },
           "xunit.runner.visualstudio": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -9241,5 +9247,27 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: xunit.core 2.4.1 requires xunit.extensibility.core (= 2.4.1) but version xunit.extensibility.core 2.4.2 was resolved.",
+      "libraryId": "xunit.extensibility.core",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: xunit.extensibility.execution 2.4.1 requires xunit.extensibility.core (= 2.4.1) but version xunit.extensibility.core 2.4.2 was resolved.",
+      "libraryId": "xunit.extensibility.core",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

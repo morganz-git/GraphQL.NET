@@ -15,6 +15,7 @@
           "Microsoft.NET.Test.Sdk": "17.1.0",
           "coverlet.collector": "3.1.2",
           "xunit": "2.4.1",
+          "xunit.extensibility.core": "2.4.2",
           "xunit.runner.visualstudio": "2.4.3"
         },
         "runtime": {
@@ -1797,26 +1798,26 @@
       },
       "xunit.core/2.4.1": {
         "dependencies": {
-          "xunit.extensibility.core": "2.4.1",
+          "xunit.extensibility.core": "2.4.2",
           "xunit.extensibility.execution": "2.4.1"
         }
       },
-      "xunit.extensibility.core/2.4.1": {
+      "xunit.extensibility.core/2.4.2": {
         "dependencies": {
           "NETStandard.Library": "1.6.1",
           "xunit.abstractions": "2.0.3"
         },
         "runtime": {
           "lib/netstandard1.1/xunit.core.dll": {
-            "assemblyVersion": "2.4.1.0",
-            "fileVersion": "2.4.1.0"
+            "assemblyVersion": "2.4.2.0",
+            "fileVersion": "2.4.2.0"
           }
         }
       },
       "xunit.extensibility.execution/2.4.1": {
         "dependencies": {
           "NETStandard.Library": "1.6.1",
-          "xunit.extensibility.core": "2.4.1"
+          "xunit.extensibility.core": "2.4.2"
         },
         "runtime": {
           "lib/netstandard1.1/xunit.execution.dotnet.dll": {
@@ -3006,12 +3007,12 @@
       "path": "xunit.core/2.4.1",
       "hashPath": "xunit.core.2.4.1.nupkg.sha512"
     },
-    "xunit.extensibility.core/2.4.1": {
+    "xunit.extensibility.core/2.4.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-yKZKm/8QNZnBnGZFD9SewkllHBiK0DThybQD/G4PiAmQjKtEZyHi6ET70QPU9KtSMJGRYS6Syk7EyR2EVDU4Kg==",
-      "path": "xunit.extensibility.core/2.4.1",
-      "hashPath": "xunit.extensibility.core.2.4.1.nupkg.sha512"
+      "sha512": "sha512-W1BoXTIN1C6kpVSMw25huSet25ky6IAQUNovu3zGOGN/jWnbgSoTyCrlIhmXSg0tH5nEf8q7h3OjNHOjyu5PfA==",
+      "path": "xunit.extensibility.core/2.4.2",
+      "hashPath": "xunit.extensibility.core.2.4.2.nupkg.sha512"
     },
     "xunit.extensibility.execution/2.4.1": {
       "type": "package",
