@@ -1,7 +1,10 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using FluentAssertions;
 using GraphQL;
 using GraphQL.Client.Abstractions;
 using GraphQLProductApp.Data;
+using Xunit;
 
 namespace GraphQLTesting;
 
