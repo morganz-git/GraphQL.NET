@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "4cBrgEQpLYQaC3I3vI9xCT/qwJl3yHj4HV+R9wR6+N01n1pNZk9bqSPa1w7OV7hZx3TAAn0a6ZyYRq1pKD4fsQ==",
+  "dgSpecHash": "Q4wzCBAoJXxOE3pO2YPo4AW8NwpcTA2PRpWokaxebHKK09dqaNQdFjTApTKP/AkCtJCtZyRUBbu6xG7pFDhcnw==",
   "success": true,
   "projectFilePath": "D:\\OneDrive\\Morgan\\Study\\Video\\C#\\Api Testing\\AppWithoutAuth\\RestSharpSpecflow\\RestSharpSpecflow.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\MorganZ\\.nuget\\packages\\autofixture\\4.17.0\\autofixture.4.17.0.nupkg.sha512",
     "C:\\Users\\MorganZ\\.nuget\\packages\\bodi\\1.5.0\\bodi.1.5.0.nupkg.sha512",
     "C:\\Users\\MorganZ\\.nuget\\packages\\cucumber.messages\\6.0.1\\cucumber.messages.6.0.1.nupkg.sha512",
     "C:\\Users\\MorganZ\\.nuget\\packages\\dynamitey\\2.0.9.136\\dynamitey.2.0.9.136.nupkg.sha512",
     "C:\\Users\\MorganZ\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\MorganZ\\.nuget\\packages\\fare\\2.1.1\\fare.2.1.1.nupkg.sha512",
     "C:\\Users\\MorganZ\\.nuget\\packages\\fluentassertions\\6.7.0\\fluentassertions.6.7.0.nupkg.sha512",
     "C:\\Users\\MorganZ\\.nuget\\packages\\gherkin\\19.0.3\\gherkin.19.0.3.nupkg.sha512",
     "C:\\Users\\MorganZ\\.nuget\\packages\\google.protobuf\\3.7.0\\google.protobuf.3.7.0.nupkg.sha512",
